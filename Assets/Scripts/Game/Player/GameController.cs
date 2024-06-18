@@ -1,4 +1,5 @@
 using System;
+using Game.Screen;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,6 +24,8 @@ namespace Game.Player
         {
             gameOverPanel.SetActive(true);
             FindObjectOfType<Score>().GameOver();
+            FindObjectOfType<PlayerMovement>().GameOver();
+            FindObjectOfType<CameraMovement>().GameOver();
             CloseUI();
         }
 

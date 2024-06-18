@@ -1,5 +1,8 @@
+using System;
+using Game.Player;
 using Game.Screen;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game.Environment
 {
@@ -37,6 +40,14 @@ namespace Game.Environment
                 float pingPongX = Mathf.PingPong(Time.time * _randomSpeed, _max - _min) + _min;
                 Vector2 pingPong = new Vector2(pingPongX, transform.position.y);
                 transform.position = pingPong;
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "Foot")
+            {
+                FindObjectOfType<PlayerMovement>().GameOver();
             }
         }
     }

@@ -8,9 +8,10 @@ namespace Game.Screen
         private float _speed;
         private float _acceleration;
         private float _maxSpeed;
-        private bool _isMoving = true;
+        private bool _isMoving;
         void Start()
         {
+            _isMoving = true;
             if (Options.GetValueEasy() == 1)
             {
                 _speed = 0.3f;
@@ -47,6 +48,11 @@ namespace Game.Screen
             {
                 _speed = _maxSpeed;
             }
+        }
+
+        public void GameOver()
+        {
+            _isMoving = false;
         }
     }
 }

@@ -147,5 +147,10 @@ namespace Game.Player
                 FindObjectOfType<GameController>().EndGame();
             }
         }
+
+        public void GameOver()
+        {
+            Destroy(gameObject);
+        }
     }
 }

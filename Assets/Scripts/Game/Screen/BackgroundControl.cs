@@ -10,6 +10,7 @@ namespace Game.Screen
         void Start()
         {
             _backgroundPos = transform.position.y;
+            FindObjectOfType<Planets>().PlacePlanet(_backgroundPos);
         }
 
         void Update()
@@ -23,6 +24,7 @@ namespace Game.Screen
         void BackgroundMaker()
         {
             _backgroundPos += (_distance * 2);
+            FindObjectOfType<Planets>().PlacePlanet(_backgroundPos);
             Vector2 newPos = new Vector2(0, _backgroundPos);
             transform.position = newPos;
         }
