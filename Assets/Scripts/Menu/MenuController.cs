@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -46,7 +45,7 @@ namespace Menu
             }
         }
 
-        public void CheckMusicSetting()
+        private void CheckMusicSetting()
         {
             if (Options.GetMusicOn() == 1)
             {

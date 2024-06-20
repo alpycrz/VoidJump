@@ -1,6 +1,4 @@
-using System;
 using Game.Screen;
-using Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,7 +39,7 @@ namespace Game.Player
             SceneManager.LoadScene("Game");
         }
 
-        void OpenUI()
+        private void OpenUI()
         {
             joystick.SetActive(true);
             jumpButton.SetActive(true);
@@ -50,7 +48,7 @@ namespace Game.Player
             slider.SetActive(true);
         }
 
-        void CloseUI()
+        private void CloseUI()
         {
             joystick.SetActive(false);
             jumpButton.SetActive(false);
