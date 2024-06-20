@@ -35,24 +35,28 @@ namespace Menu
             if (Options.GetMusicOn() == 1)
             {
                 Options.SetMusicOn(0);
+                MusicController.instance.PlayMusic(false);
                 musicButton.image.sprite = musicIcons[0];
             }
             else
             { 
                 Options.SetMusicOn(1);
+                MusicController.instance.PlayMusic(true);
                 musicButton.image.sprite = musicIcons[1];
             }
         }
 
-        private void CheckMusicSetting()
+        public void CheckMusicSetting()
         {
             if (Options.GetMusicOn() == 1)
             {
                 musicButton.image.sprite = musicIcons[1];
+                MusicController.instance.PlayMusic(true);
             }
             else
             {
                 musicButton.image.sprite = musicIcons[0];
+                MusicController.instance.PlayMusic(false);
             }
         }
 

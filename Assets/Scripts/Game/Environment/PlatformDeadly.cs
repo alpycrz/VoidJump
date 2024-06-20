@@ -48,6 +48,7 @@ namespace Game.Environment
             if (other.gameObject.tag == "Foot")
             {
                 FindObjectOfType<PlayerMovement>().GameOver();
+                FindObjectOfType<GameController>().EndGame();
             }
         }
     }

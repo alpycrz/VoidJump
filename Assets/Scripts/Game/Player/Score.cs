@@ -33,6 +33,7 @@ namespace Game.Player
 
         public void EarnGold()
         {
+            FindObjectOfType<SoundController>().GoldSound();
             _gold++;
             goldText.text = "X" + _gold;
         }

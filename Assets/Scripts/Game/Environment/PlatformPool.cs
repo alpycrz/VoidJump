@@ -28,7 +28,7 @@ namespace Game.Environment
             }
         }
 
-        void CreatePlatform()
+        private void CreatePlatform()
         {
             _platformPos = new Vector2(0, 0);
             _playerPos = new Vector2(0, 0.5f);
@@ -59,7 +59,7 @@ namespace Game.Environment
             NextPlatformPos();
         }
         
-        void PlacePlatform()
+        private void PlacePlatform()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -83,9 +83,15 @@ namespace Game.Environment
             }
         }
 
-        void NextPlatformPos()
+        private void NextPlatformPos()
         {
             _platformPos.y += platformDistance;
+            MixedPosition();
+            //OrdinaryPosition();
+        }
+
+        private void MixedPosition()
+        {
             float random = Random.Range(0f, 1f);
 
             if (random < 0.5f)
@@ -95,6 +101,21 @@ namespace Game.Environment
             else
             {
                 _platformPos.x = -ScreenCalculator.instance.Width / 2;
+            }
+        }
+
+        private bool _direction = true;
+        private void OrdinaryPosition()
+        {
+            if (_direction)
+            {
+                _platformPos.x = ScreenCalculator.instance.Width / 2;
+                _direction = false;
+            }
+            else
+            {
+                _platformPos.x = -ScreenCalculator.instance.Width / 2;
+                _direction = true;
             }
         }
 

@@ -121,6 +121,7 @@ namespace Game.Player
         {
             if (jumpCount < jumpLimit)
             {
+                FindObjectOfType<SoundController>().JumpSound();
                 _rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 _animator.SetBool(Jump, true);
                 FindObjectOfType<JumpSlider>().SliderValue(jumpLimit, jumpCount);

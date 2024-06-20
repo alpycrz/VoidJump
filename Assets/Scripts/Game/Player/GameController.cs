@@ -1,5 +1,6 @@
 using System;
 using Game.Screen;
+using Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,7 @@ namespace Game.Player
 
         public void EndGame()
         {
+            FindObjectOfType<SoundController>().GameOverSound();
             gameOverPanel.SetActive(true);
             FindObjectOfType<Score>().GameOver();
             FindObjectOfType<PlayerMovement>().GameOver();
